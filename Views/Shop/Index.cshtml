@@ -1,0 +1,28 @@
+@model IEnumerable<Shops>
+
+    <h2>Shop List</h2>
+    <hr>
+    <a href="/Shop/Create" class="btn btn-danger" style="background-color: #950014;border: #950014;">Add Shop</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 10px;">@Html.DisplayNameFor(m =>m.ShopId)</th>
+                <th style="width: 95px;">@Html.DisplayNameFor(m =>m.Title)</th>
+                <th style="width: 10px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr style="vertical-align: middle">
+                    <td style="text-align: center;">@Html.DisplayFor(modelItem =>item.ShopId)</td>
+                    <td>@Html.DisplayFor(modelItem =>item.Title)</td>
+                    <td >
+                        <a asp-controller="Shop" asp-action="Edit" asp-route-id="@item.ShopId" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Edit</a>
+                        <a asp-controller="Shop" asp-action="Delete" asp-route-id="@item.ShopId" class="btn btn-sm btn-outline-dark">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

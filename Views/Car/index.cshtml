@@ -1,0 +1,36 @@
+@model IEnumerable<Cars>
+
+<h2>Car List</h2>
+<hr>
+<a href="/Car/Create" class="btn btn-danger" style="background-color: #950014;border: #950014;">Add Car</a>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px;">@Html.DisplayNameFor(m =>m.CarId)</th>
+            <th style="width: 95px;">@Html.DisplayNameFor(m =>m.CarImage)</th>
+            <th style="width: 10px;">@Html.DisplayNameFor(m =>m.CarName)</th>
+            <th style="width: 10px;">@Html.DisplayNameFor(m =>m.CarModel)</th>
+            <th style="width: 10px;">@Html.DisplayNameFor(m =>m.CarPrice)</th>
+            <th style="width: 5px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr style="vertical-align: middle">
+                <td style="text-align: center;">@Html.DisplayFor(modelItem =>item.CarId)</td> 
+                <td>
+                    <img src="@Html.DisplayFor(modelItem =>item.CarImage)" class="img-fluid" alt="">
+                </td>
+                <td>@Html.DisplayFor(modelItem =>item.CarName)</td> 
+                <td>@Html.DisplayFor(modelItem =>item.CarModel)</td>
+                <td>@Html.DisplayFor(modelItem =>item.CarPrice)</td>
+                <td >
+                    <a asp-controller="Car" asp-action="Edit" asp-route-id="@item.CarId" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Edit</a>
+                    <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.CarId" class="btn btn-sm btn-outline-dark">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

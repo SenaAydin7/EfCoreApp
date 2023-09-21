@@ -1,0 +1,11 @@
+@model Owner
+
+<p>
+    Are you sure to delete Owner <b>@Model.FirstName @Model.LastName</b>
+    <br>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.OwnerId">
+        <button type="submit" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Delete</button>
+        <a asp-action="Index" class="btn btn-sm btn-dark">No</a>
+    </form>
+</p>

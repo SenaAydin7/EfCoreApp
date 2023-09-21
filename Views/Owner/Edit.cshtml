@@ -1,0 +1,39 @@
+@model Owner
+
+<h2>Owner Update</h2>
+<hr>
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Owner" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="OwnerId">
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">Phone</label>
+                <input asp-for="Phone" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label">Start Date</label>
+                <input asp-for="StartDate" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="CarId" class="form-label">Owned Car</label>
+                <select asp-for="CarId" asp-items="ViewBag.Car" class="form-select">
+                    <option value="">Choose Your Car</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger" style="background-color: #950014;border:#950014">Save</button>
+        
+        </form>
+    </div>
+</div>

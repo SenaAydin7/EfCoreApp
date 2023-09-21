@@ -1,0 +1,21 @@
+@model ShopReg 
+
+<h2>Register Shop</h2>
+<hr>
+<form asp-controller="ShopReg" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="CarId" class="form-label">Car Name</label>
+        <select asp-for="CarId" asp-items="ViewBag.Cars" class="form-control">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ShopId" class="form-label">Shop Name</label>
+        <select asp-for="ShopId" asp-items="ViewBag.Shops" class="form-select">
+            <option value="">Choose</option>
+
+        </select>
+    </div>
+    <button type="submit" class="btn btn-danger" style="background-color: #950014;border:#950014">Save</button>
+
+</form>

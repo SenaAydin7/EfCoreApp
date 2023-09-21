@@ -1,0 +1,13 @@
+@model Cars
+
+<p>
+    Are you sure to delete <b>@Model.CarName @Model.CarModel</b>
+    <br>
+    <img src="@Model.CarImage" style="width: 400px;">
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.CarId">
+        <button type="submit" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Delete</button>
+        <a asp-action="Index" class="btn btn-sm btn-dark">No</a>
+    </form>
+</p>

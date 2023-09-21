@@ -1,0 +1,12 @@
+@model Shops 
+
+<h2>Add Shop</h2>
+<hr>
+<form asp-controller="Shop" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-danger" style="background-color: #950014;border:#950014">Save</button>
+
+</form>

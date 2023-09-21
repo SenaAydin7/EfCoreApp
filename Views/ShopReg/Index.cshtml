@@ -1,0 +1,33 @@
+@model IEnumerable<ShopReg>
+
+<h2>Car List</h2>
+<hr>
+
+<a asp-action="Create" class="btn btn-danger" style="background-color: #950014;border: #950014;">Register</a>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m=>m.ShopRegId)</th>
+            <th>@Html.DisplayNameFor(m=>m.RegDate)</th>
+            <th>@Html.DisplayNameFor(m=>m.Car.FullName)</th>
+            <th>@Html.DisplayNameFor(m=>m.Shop.ShopId)</th>
+            <th style="width: 150px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ShopRegId)</td>
+                <td>@Html.DisplayFor(modelItem => item.RegDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Car.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Shop.Title)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Car.CarId" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.CarId" class="btn btn-sm btn-outline-dark">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>    

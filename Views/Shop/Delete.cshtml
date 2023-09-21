@@ -1,0 +1,13 @@
+@model Shops
+
+<p>
+    Are you sure to delete <b>@Model.Title</b> shop?
+    <br>
+    <img src="https://images.hindustantimes.com/auto/img/2021/01/21/1600x900/20210116_150153-01_1611210908687_1611210917451.jpeg" style="width: 400px; padding-top:10px;">
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.ShopId">
+        <button type="submit" class="btn btn-sm btn-danger" style="background-color: #950014;border: #950014;">Delete</button>
+        <a asp-action="Index" class="btn btn-sm btn-dark">No</a>
+    </form>
+</p>

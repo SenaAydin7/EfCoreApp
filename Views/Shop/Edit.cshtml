@@ -1,0 +1,27 @@
+@model Shops 
+
+<h2>Shop Update</h2>
+<hr>
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Shop" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="ShopId">
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Shop Name</label>
+                <input asp-for="Title" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-danger" style="background-color: #950014;border:#950014">Save</button>
+        
+        </form>
+    </div>
+    <div class="col-4">
+        <h4>Cars</h4>
+        <hr>
+        <ul>
+            @foreach(var item in @Model.ShopReg)
+            {
+                <li>@item.Car.FullName</li>
+            }
+        </ul>
+    </div>
+</div>
